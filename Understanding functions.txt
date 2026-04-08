@@ -1,0 +1,150 @@
+Understanding functions
+
+-Functions are reusable codes that run when called
+-Python has many built in functions such as input() an d print()
+
+-input() =allows you to ask for user input
+example: name = input('What is your name?')
+print('Hello', name)
+
+-int()=converts a number a Boolean and string to an integer
+example: print(int(3.14)) # 3
+print(int('42')) # 42
+print(int(True)) # 1
+print(int(False)) # 0 
+
+I can also write my own functions using the word def(define).
+example:
+
+def Hello():
+  print('hello world')
+
+//calling it
+Hello()
+
+example 2:
+def calculate_sum(a,b):
+  print(a + b)
+
+//call it
+
+ calculate_sum(3 , 4)
+
+if you call a function with the incorrect number of arguments you will make a TYPE ERROR.
+
+Using a return value
+
+
+example:
+def calculate(a , b)
+   return a + b
+
+
+
+What is scope
+
+-Determines at which you can access a variable.
+-Controls the life time of a variable
+
+There are rules that determine a scope
+LEGB
+
+ Local scope= variables defined in functions or classes
+Enclosing scope = variables defined in enclosing or nested functions
+Global scope = variable defined at the top level of the module or file
+Built- in scope = reserved names in python for predefined functions , modules, keywords and objects.
+
+
+Local scope
+
+variables can be accessed within a function or class that they were declared in
+
+example: def funtion_1():
+	my_var =10
+	print(my_var)
+
+You can call function 1, but cannot print my_var outside this function.
+If so it will result to Name ERROR
+
+Enclosing Scope
+ The variables of parent function or class can be accessed in the sub functions or classes
+
+example:
+
+de outer_function():
+	msg= 'Hello there!'
+	
+	def inner_function():
+	   print(msg)
+
+-But the outer funtions cannot access the inner function's variables
+
+example:
+def outer_func():
+    msg = 'Hello there!'
+    print(res)
+
+    def inner_func():
+        res = 'How are you?'
+        print(msg)
+
+    inner_func()
+
+outer_func()
+
+To solve this , declare the variable in the outer function and make it a non-local variable
+Use nonlocal keyword in the inner function
+
+example:
+def outer_func():
+    msg = 'Hello there!'
+    res = ""  # Declare res in the enclosing scope
+
+    def inner_func():
+        nonlocal res  # Allow modification of an enclosing variable
+        res = 'How are you?'
+        print(msg)  # Accessing msg from outer_func()
+
+Global scope
+
+variables that are declared anywhere in the program and can be accessed anywhere in the program
+
+example:
+
+my_var = 100
+
+def show_var():
+    print(my_var)
+
+show_var() # 100
+print(my_var) # 100
+
+If you want to make a local variable global , use the key word global 
+
+example:
+my_var_1 = 7
+
+def show_vars():
+    global my_var_2
+    my_var_2 = 10
+    print(my_var_1)
+    print(my_var_2)
+
+show_vars() # 7 10
+
+# my_var_2 is now a global variable and can be accessed anywhere in the program
+print(my_var_2) # 10
+
+To modify a global variable inside a function , you can use the keyword global too.
+
+
+Built-in Scope
+
+This all the python's built in functions, modules and keywords and are available anywhere in the program.
+
+example:
+print(str(45)) # '45'
+print(type(3.14)) # <class 'float'>
+print(isinstance(3, str)) # False
+
+

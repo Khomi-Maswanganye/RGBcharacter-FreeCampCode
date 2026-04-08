@@ -1,0 +1,355 @@
+Boolean and Conditionals
+
+
+
+&#x20;Conditional Statements and Logical Operators:
+
+
+
+\-Control the way of program , based on certain conditions
+
+
+
+Basic building blocks of conditional statements:
+
+
+
+\-Comparison operators:
+
+&#x09;==
+
+&#x09;!=
+
+&#x09;>
+
+&#x09;<
+
+&#x09;>=
+
+&#x09;<=
+
+
+
+Example:
+
+print(3 > 4) # False
+
+print(3 < 4) # True
+
+print(3 == 4) # False
+
+print(4 == 4) # True
+
+print(3 != 4) # True
+
+print(3 >= 4) # False
+
+print(3 <= 4) # True
+
+
+
+\-Basic conditionals use the comparison operators to run certain codes.
+
+Syntax:
+
+if condition:
+
+&#x20;   pass # Code to execute if condition is True
+
+
+
+\-pass is a placeholder for future code
+
+\-the code within the body only runs if the statement is true
+
+
+
+example:
+
+age = 18
+
+
+
+if age >= 18:
+
+&#x20;   print('You are an adult') # You are an adult
+
+
+
+\-in python, we use indentation. Unlike java and kotlin where they use {}=curly brackets, to show that the if has a body, only use that space.
+
+
+
+\-if you dont put an indentation, there will be an Indentation error.
+
+
+
+example:
+
+age = 18
+
+
+
+if age >= 18:
+
+print('You are an adult') # IndentationError: expected an indented block after 'if' statement on line 3
+
+
+
+\-python recommends you to use 4 spaces.
+
+
+
+\-The else clause runs when the if condition is false. 
+
+
+
+example:
+
+if condition:
+
+&#x20;  pass # Code to execute if condition is True
+
+else:
+
+&#x20;  pass # Code to execute if condition is False
+
+
+
+\- you cannot place any statements between the if block and the else clause.
+
+example:
+
+age = 12
+
+
+
+if age >= 18:
+
+&#x20;   print('You are an adult')
+
+print('Almost there!')
+
+else: # SyntaxError: invalid syntax
+
+&#x20;   print('You are not an adult yet')
+
+
+
+\-You can extend to elif statements(else if)
+
+\-you can use as many elif statements.
+
+example:
+
+if condition1:
+
+&#x20;  pass # Code to execute if condition1 is True
+
+elif condition2:
+
+&#x20;  pass # Code to execute if condition1 is False and condition2 is True
+
+else:
+
+&#x20;  pass # Code to execute if all conditions are False
+
+
+
+
+
+Truthy and Falsy Values, and How Do Boolean Operators and Short-Circuiting Work.
+
+\-You will often run into situations where you need to compare multiple values at once.
+
+example:
+
+is\_citizen = True
+
+age = 25
+
+
+
+if is\_citizen:
+
+&#x20;   if age >= 18:
+
+&#x20;       print('You are eligible to vote') # You are eligible to vote
+
+else:
+
+&#x20;   print('You are not eligible to vote')
+
+
+
+\-You are working with more complex conditional statements, then you can use Python’s and, or, and not operators.
+
+
+
+\- every value has an inherent boolean value, or a built-in sense of whether it should be treated as True or False in a logical context.
+
+\-Here are a few falsy values:
+
+
+
+None
+
+False
+
+Integer 0
+
+Float 0.0
+
+Empty strings ""
+
+
+
+\-If you want to check whether a value is truthy or falsy, you can use the built-in bool() function.
+
+
+
+example:
+
+print(bool(False)) # False
+
+print(bool(0))  # False
+
+print(bool('')) # False
+
+
+
+print(bool(True)) # True
+
+print(bool(1)) # True
+
+print(bool('Hello')) # True
+
+
+
+\-There a 3 Boolean operators
+
+&#x09;-and
+
+&#x09;-or
+
+&#x09;-not
+
+
+
+\-The **and** operator takes two operands and returns the first operand if it is falsy, otherwise, it returns the second operand.
+
+examples:
+
+is\_citizen = True
+
+age = 25
+
+
+
+print(is\_citizen and age) # 25
+
+
+
+\-The result of this will be 25 because the first value was true.
+
+\-Short-circuiting means Python checks values from left to right and stops as soon as it determines the final result.
+
+
+
+is\_citizen = True
+
+age = 25
+
+
+
+if is\_citizen and age >= 18:
+
+&#x20;   print('You are eligible to vote') # You are eligible to vote
+
+else:
+
+&#x20;   print('You are not eligible to vote')
+
+
+
+\-The  or operator returns the first operand if it is truthy, otherwise, it returns the second operand.
+
+example:
+
+
+
+age = 19
+
+is\_employed = False
+
+
+
+print(age or is\_employed) # 19
+
+
+
+\-It took 19 as they first value is true.
+
+
+
+example2.1:
+
+
+
+age = 19
+
+is\_student = True
+
+
+
+if age < 18 or is\_student:
+
+&#x20;   print('You are eligible for a student discount') # You are eligible for a student discount
+
+else:
+
+&#x20;   print('You are not eligible for a student discount')
+
+
+
+\-The not operator which takes a single operand and inverts its boolean value.
+
+\-It converts truthy values to False and falsy values to True
+
+example:
+print(not '') # True, because empty string is falsy
+
+print(not 'Hello') # False, because non-empty string is truthy
+
+print(not 0) # True, because 0 is falsy
+
+print(not 1) # False, because 1 is truthy
+
+print(not False) # True, because False is falsy
+
+print(not True) # False, because True is truthy
+
+
+
+exampl2.1:
+
+
+
+is\_admin = False
+
+
+
+if not is\_admin:
+
+&#x20;   print('Access denied for non-administrators.') # Access denied for non-administrators.
+
+else:
+
+&#x20;   print('Welcome, Administrator!')
+
+
+
+&#x20;
+
+
+

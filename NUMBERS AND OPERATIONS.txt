@@ -1,0 +1,149 @@
+NUMBERS AND OPERATIONS
+
+Working with integers and float point numbers
+
+-Integers and floats are the primary numeric data types in Python. 
+-Store numeric data with them
+
+my_int_1 = 56
+my_int_2 = -4
+
+print(type(my_int_1)) # <class 'int'>
+print(type(my_int_2)) # <class 'int'>
+
+how to perform addition/subtraction operator with int:
+
+my_int_1 = 56
+my_int_2 = 12
+
+sum_ints = my_int_1 + my_int_2
+print('Integer Addition:', sum_ints) # Integer Addition: 68
+
+how to perform multiplication/division:
+
+my_int_1 = 12
+my_int_2 = 4
+
+# Multiplication
+product_ints = my_int_1 * my_int_2
+print('Integer Multiplication:', product_ints) # Integer Multiplication: 48
+
+
+Floats are positive or negative numbers with decimal points:
+
+my_float_1 = -12.0
+my_float_2 = 4.9
+
+print(type(my_float_1)) # <class 'float'>
+print(type(my_float_2)) # <class 'float'>
+
+Work same  way as int with operations
+
+-if you ad am integer and float, it will result to a float.
+
+-There are other mathemathical operations such as :
+modulo,floor divison and exponentiation
+
+my_int_1 = 56
+my_int_2 = 12
+
+my_float_1 = 5.4
+my_float_2 = 12.0
+
+mod_ints = my_int_1 % my_int_2
+mod_floats = my_float_2 % my_float_1
+
+print('Integer Modulo:', mod_ints) # Integer Modulo: 8
+print('Float Modulo:', mod_floats) # Float Modulo: 1.1999999999999993
+
+-Floor division divides two numbers and returns the greatest integer less than or equal to the result. This is done with the double forward slash operator (//):
+
+my_int_1 = 56
+my_int_2 = 12
+
+my_float_1 = 5.4
+my_float_2 = 12.0
+
+floor_div_ints = my_int_1 // my_int_2
+floor_div_floats = my_float_2 // my_float_1
+
+print('Integer Floor Division:', floor_div_ints) # Integer Floor Division: 4
+print('Float Floor Division:', floor_div_floats) # Float Floor Division: 2.0
+
+-Exponentiation raises a number to the power of another, and is done with the double asterisk operator (**):
+
+my_int_1 = 56
+my_int_2 = 12
+
+my_float_1 = 5.4
+my_float_2 = 12.0
+
+exp_ints = my_int_1 ** my_int_2
+exp_floats = my_float_1 ** my_float_2
+
+print('Integer Exponentiation:', exp_ints) # Integer Exponentiation: 951166013805414055936
+print('Float Exponentiation:',  exp_floats) # Float Exponentiation: 614787626.1765089
+
+
+-you might notice that the result of an operation involving floats has more decimal digits than expected.
+-This happens because numbers are stored in binary format, and some fractions cannot be represented exactly in binary
+-This leads to small rounding errors.
+
+-Python also provides built-in functions for converting either numeric data or strings into integers or floats.
+
+-The float() function returns a floating-point number constructed from the given number:
+
+my_int_1 = 56
+my_float_1 = float(my_int_1)
+
+print(my_float_1)  # 56.0
+
+-The int() function returns an integer constructed from the given number:
+
+my_float = 12.92563
+my_int = int(my_float)
+
+print(my_int)  # 12
+
+-You can use these functions to turn a string into on of the datatypes:
+my_str_int = '45'
+my_str_float = '7.8'
+
+converted_int = int(my_str_int)
+converted_float = float(my_str_float)
+
+print(converted_int, type(converted_int))  # 45 <class 'int'>
+print(converted_float, type(converted_float))  # 7.8 <class 'float'>
+
+-Here are some other methods:
+round()
+abs():
+num = -15
+
+absolute_value = abs(num)
+print(absolute_value) # 15
+pow()
+
+AUGMENTED ASSIGNMENTS
+
+-Augmented assignment combines a binary operation with an assignment in one step.
+SYNTAX:
+variable <operator>= value
+
+Example:
+
+my_var = 10
+my_var += 5
+
+print(my_var) # 15
+
+-The advantage of augmented assignment is that it provides a concise and readable way to update a variable value without repeating the variable name.
+
+-Can be used with any operations and an can add strings
+
+-If you're wondering if increment and decrement operators (++ and  --) work in Python, they don't. 
+
+
+
+
+
